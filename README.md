@@ -1,1 +1,20 @@
-# WAD2022-FARUQI-1202204105
+# Website Application Development Practicum
+
+This is the repository for the Website Application Development Practicum. 
+With EAD Laboratory.
+
+## Getting Started
+- Clone the repository
+```bash
+git clone https://github.com/faruqii/WAD2022-FARUQI-1202204105.git
+```
+
+## Modules
+- Module 1
+- Module 2
+- Module 3
+- Module 4
+- Module 5
+
+
+
