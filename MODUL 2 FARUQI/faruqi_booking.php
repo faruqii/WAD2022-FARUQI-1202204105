@@ -72,7 +72,7 @@ require "db.php";
                         </li>
 
                         <li class="m-1">
-                            <label for="jam">Duration (Hours)</label><br>
+                            <label for="jam">Duration (Day)</label><br>
                             <input class="form-control" type="number" name="jam" id="jam" min="1" value="1">
                         </li>
 
