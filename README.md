@@ -10,7 +10,7 @@ git clone https://github.com/faruqii/WAD2022-FARUQI-1202204105.git
 
 ## Modules
 - Module 1 : `HTML & CSS With Bootstrap`
-- Module 2
+- Module 2 : `Basic PHP`
 - Module 3
 - Module 4
 - Module 5
