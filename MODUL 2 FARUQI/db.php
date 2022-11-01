@@ -1,6 +1,6 @@
 <?php
 $credit = "Faruqi_1202204105";
-$listsCar = [
+$listCar = [
     [
         "cname" => "Toyota Alphard",
         "price" => 1500,
@@ -16,4 +16,4 @@ $listsCar = [
         "price" => 500,
         "img" => "assets/img/hrv.png"
     ],
-]
+];

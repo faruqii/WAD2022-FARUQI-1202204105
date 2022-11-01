@@ -44,7 +44,7 @@ require "db.php";
             <div class="col-6 ps-5 pe-5 d-flex align-items-center">
                 <?php
                 if (isset($_GET["img"])) {
-                ?><img class="" width="100%" src="<? $_GET["img"]; ?>" alt="">
+                ?><img class="" width="100%" src="<?= $_GET["img"]; ?>" alt="">
                 <?php
                 } else {
                 ?><img width="100%" src="img/foto0.jpg" alt="">
@@ -54,7 +54,7 @@ require "db.php";
             <div class="col-6 ps-5 pe-5">
                 <ul type="none">
 
-                    <form action="faruqi_myBooking.php" method="get">
+                    <form action="faruqi_myBooking.php" method="POST">
 
                         <li class="m-1">
                             <label for="nama">Name</label><br>

@@ -52,8 +52,8 @@ require "db.php";
                 <div class="card shadow-sm rounded">
                     <img src="<?php echo $listCar[0]["img"]; ?>" class="img-fluid rounded-start" style="display:flex; justify-items:center; align-items:center;" alt="">
                     <div class="m-3">
-                        <p class="m-0" style="font-size: 20px"><?php echo $listCar[0]["cname"]; ?></p>
-                        <p class="m-0" style="color: grey">$<?php echo $listCar[0]["price"]; ?> / day</p>
+                        <p class="m-0" style="font-size: 20px"><?php echo $listCar[0]["cname"];?></p>
+                        <p class="m-0" style="color: grey">$<?php echo $listCar[0]["price"];?> / day</p>
                     </div>
                     <hr class="m-0">
                     <p class="m-2" style="text-align: center; color: #f9a825;">6 Seat with Captain Seat</p>
@@ -63,7 +63,7 @@ require "db.php";
                     <p class="m-2" style="text-align: center; color: #f9a825;">Elegant</p>
                     <hr class="m-0">
                     <div class="text-center bg-light">
-                        <button class="m-2 btn btn-warning" type="submit"><a href="faruqi_booking.php?img=<?= $listCar[0]["img"]; ?>&name=<?= $listCar[1]["cname"]; ?>" style="color: white; text-decoration: none;">Book Now</a></button>
+                        <button class="m-2 btn btn-warning" type="submit"><a href="faruqi_booking.php?img=<?= $listCar[0]["img"];?>&name=<?= $listCar[1]["cname"];?>" style="color: white; text-decoration: none;">Book Now</a></button>
                     </div>
                 </div>
             </div>
