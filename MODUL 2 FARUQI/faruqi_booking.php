@@ -44,7 +44,7 @@ require "db.php";
             <div class="col-6 ps-5 pe-5 d-flex align-items-center">
                 <?php
                 if (isset($_GET["img"])) {
-                ?><img class="" width="100%" src="<?= $_GET["img"]; ?>" alt="">
+                ?><img class="" width="100%" src="<? $_GET["img"]; ?>" alt="">
                 <?php
                 } else {
                 ?><img width="100%" src="img/foto0.jpg" alt="">
@@ -54,7 +54,7 @@ require "db.php";
             <div class="col-6 ps-5 pe-5">
                 <ul type="none">
 
-                    <form action="faruqi_myBooking.php" method="post">
+                    <form action="faruqi_myBooking.php" method="get">
 
                         <li class="m-1">
                             <label for="nama">Name</label><br>
@@ -126,4 +126,5 @@ require "db.php";
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
 </html>
