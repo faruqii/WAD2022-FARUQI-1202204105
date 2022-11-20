@@ -6,7 +6,6 @@ $result = mysqli_query($conn, $query);
 
 if (isset($_GET['message'])) {
   if ($_GET['message'] == 'added') {
-    // get name
     echo "<script>alert('successfuly added to database')</script>";
   } else if ($_GET['message'] == 'update') {
     echo "<script>alert('successfuly update data')</script>";
