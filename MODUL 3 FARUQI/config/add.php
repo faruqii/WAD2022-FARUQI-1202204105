@@ -14,7 +14,7 @@ $target = "../asset/images/";
 
 if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target . $photo)) {
   $sql = "INSERT INTO showroomead_faruqi (nama_mobil, pemilik_mobil, merk_mobil, tanggal_beli, deskripsi, foto_mobil, status_pembayaran) VALUES ('$carname', '$owner', '$brand', '$date', '$desc', '$photo', '$status')";
-  if (mysqli_query($conn, $sqli)) {
+  if (mysqli_query($conn, $sql)) {
     header("location: ../pages/List-Faruqi.php?message=added");
   } else {
     echo "Gagal";
