@@ -1,5 +1,5 @@
 <?php
-require '../config/conn.php';
+require '/config/conn.php';
 
 $id = $_GET['id'];
 
@@ -51,7 +51,7 @@ $result = mysqli_query($conn, $sql);
                     <label for='pemilik'>Car Owner</label>
                     <input type='text' id='pemilik' name='pemilik' value='" . $getDetail["pemilik_mobil"] . "' readonly>
                     <label for='merk'>Brand</label>
-                    <input type='text' id='merk' name='merk' value='" . $getDetail["merk_mobil"] . "' readonly>
+                    <input type='text' id='merk' name='merk' value='" . $getDetail["merk_mobil"], "' readonly>
                     <label for='tanggalbeli'>Purchase Date</label>
                     <input type='date' id='tanggalbeli' name='tanggalbeli' value='" . $getDetail["tanggal_beli"] . "' readonly>
                     <label for='desc'>Description</label>

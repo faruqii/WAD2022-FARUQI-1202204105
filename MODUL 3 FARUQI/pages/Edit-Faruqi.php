@@ -14,7 +14,7 @@ if (isset($_GET['message'])) {
     echo "<div class='alert alert-success' role='alert'> Data has been updated</div>";
   } else if ($_GET['message'] == 'delete') {
     echo "<div class='alert alert-success' role='alert'> Data has been deleted</div>";
-  } 
+  }
 }
 ?>
 
@@ -86,6 +86,6 @@ if (isset($_GET['message'])) {
   <!-- Form End -->
 
   <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
+</body>
 
 </html>
