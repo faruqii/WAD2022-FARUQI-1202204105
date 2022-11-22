@@ -14,7 +14,7 @@ $target = "../asset/images/";
 
 if ("SELECT foto_mobil FROM showroomead_faruqi WHERE id_mobil = $id" != 0) {
   if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target . $photo)) {
-    $editquery = "UPDATE showroomead_faruqi SET nama_mobil = '$carname', pemilik_mobil = '$owner', merk_mobil = '$brand', tanggal_beli = '$date', deskripsi = '$desc', foto_mobil = '$photo', status_pembayaran = '$status' WHERE id_mobil = $id";
+    $editquery = "UPDATE showroomead_faruqi SET nama_mobil = '$carname', pemilik_mobil = '$owner', merk_mobil = '$brand', tanggal_beli = '$date', deskripsi = '$desc', foto_mobil = '$photo', status_pembayaran = '$status' WHERE id = $id";
     if (mysqli_query($conn, $editquery)) {
       header("location: ../pages/List-Faruqi.php?message=update");
     } else {
