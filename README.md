@@ -12,8 +12,8 @@ git clone https://github.com/faruqii/WAD2022-FARUQI-1202204105.git
 - Module 1 : `HTML & CSS With Bootstrap`
 - Module 2 : `Basic PHP`
 - Module 3 : `CRUD With PHP`
-- Module 4
-- Module 5
+- Module 4 : `Session & Cookie`
+- Module 5 : `Laravel`
 
 
 

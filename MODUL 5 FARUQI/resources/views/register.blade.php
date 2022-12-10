@@ -9,7 +9,7 @@
             <div class="col-md-6">
                 <div class="form-login m-auto ps-5">
                     <h2 class="fw-bold mb-4">Register</h2>
-                    <form action="{{ route('register.post') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('/register')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <!-- Email input -->
                         <div class="mb-3 position-relative">
@@ -49,10 +49,10 @@
                                     name="password2" placeholder="masukan ulang password" required />
                             </div>
                             <div class="text-center text-lg-start mt-4 pt-2">
-                                <button type="submit" name="daftar" class="btn btn-success btn-lg"
+                                <button type="submit" name="daftar" class="btn btn-primary btn-lg"
                                     style="padding-left: 2.5rem; padding-right: 2.5rem;">Daftar</button>
                                 <p class="small fw-bold mt-2 pt-1 mb-0">anda sudah punya akun? <a
-                                        href="{{'login'}}" class="link-danger">Login</a></p>
+                                        href="{{ 'login' }}" class="link-danger">Login</a></p>
                             </div>
                     </form>
                 </div>

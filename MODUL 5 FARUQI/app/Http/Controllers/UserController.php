@@ -4,10 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
+
 
 class UserController extends Controller
 {
     //
+
+    public function index()
+    {
+        return view('register');
+    }
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function logout()
+    {
+        return view('login');
+    }
 
     /**
      * Register User
@@ -17,23 +34,16 @@ class UserController extends Controller
      */
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string',
-            'no_hp' => 'required|string',
-            'email' => 'required|string|email|unique:users',
-            'password' => 'required|string|confirmed',
+        $data = $request->all();
+
+        User::create([
+            'name' => $data['name'],
+            'no_hp' => $data['no_hp'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
         ]);
 
-        $user = new User([
-            'name' => $request->input('name'),
-            'no_hp' => $request->input('no_hp'),
-            'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password')),
-        ]);
-
-        $user->save();
-
-        return redirect()->view('login')->with('success', 'Register Success');
+        return redirect('/login')->with('success', 'Register Success');
     }
 
     /**
@@ -42,7 +52,7 @@ class UserController extends Controller
      * @param Request $request
      * @return response
      */
-    public function login(Request $request)
+    public function loginUser(Request $request)
     {
         $request->validate([
             'email' => 'required|string|email',
@@ -56,18 +66,19 @@ class UserController extends Controller
         if (!auth()->attempt($credentials))
             return redirect()->route('login')->with('error', 'Login Failed');
 
-        return redirect('home')->with('success', 'Login Success');
+        return redirect('/')->with('success', 'Login Success');
     }
 
     /**
      * Logout User
      * 
      */
-    public function logout()
+    public function logoutUser()
     {
+        Session::flush();
         auth()->logout();
 
-        return redirect()->route('login')->with('success', 'Logout Success');
+        return redirect('/')->with('success', 'Logout Success');
     }
 
     /**
@@ -76,24 +87,24 @@ class UserController extends Controller
      * @param Request $request
      * @return response
      */
-    public function edit(Request $request)
+    public function edit(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required|string',
-            'no_hp' => 'required|string',
-            'password' => 'required|string|confirmed',
-        ]);
+        $data = $request->all();
 
-        $user = User::where('email', '=', $request->input('email'))->first();
-
-        $user->name = $request->input('name');
-        $user->no_hp = $request->input('no_hp');
-        $user->password = bcrypt($request->input('password'));
-
+        $user = User::find($id);
+        $user->name = $data['name'];
+        $user->no_hp = $data['no_hp'];
+        $user->password = bcrypt($data['password']);
         $user->save();
 
-        return response()->json([
-            'message' => 'Successfully edited user!'
-        ], 201);
+        return redirect('/')->with('success', 'Edit Success');
+    }
+
+    public function userDetail(Request $request, $id)
+    {
+        $user = User::find($id);
+        // dd($car);
+
+        return view('profile', compact('user'));
     }
 }

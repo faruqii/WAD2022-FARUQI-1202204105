@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 min-vh-100 left">
-                    <img src="assets/img/hrv.png" style="object-fit:fill; width:100%; height:100%;" alt="foto">
+                    <img src="https://i.pinimg.com/736x/27/c8/4c/27c84c042caaef735afb5fe932c4c79f.jpg" style="object-fit:fill; width:100%; height:100%;" alt="foto">
                 </div>
                 <div class="col-md-6">
                     <div class="form-login m-auto ps-5">
@@ -35,7 +35,7 @@
                             </div>
                             <a href="#!" class="text-body">Forgot password?</a>
                     </div>
-                    <div class="text-center text-lg-start mt-4 pt-2">
+                    <div class="text-center text-lg-start mt-4 pt-2" style="margin-left: 50px;">
                         <button type="submit" class="btn btn-primary btn-lg" name="login"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have Account? <a href="{{'register'}}"

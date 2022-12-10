@@ -1,34 +1,36 @@
-@extend('layouts.layout')
-
+@extends('layouts.layout')
+@section('list')
+    active
+@endsection
+@section('content')
 <!-- Content -->
 <section id="list">
     <div class="container">
-        <div>
-            <h1>My Show Room</h1>
-            <p>List Show Room Faruqi - 1202204105</p>
-            <div class="d-flex gap-5">
-                {{-- Get data from database --}}
-                @foreach ($data as $row)
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ $row->image }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5
-                                class="card-title
-                            @if ($row->status == 'sold') text-danger
-                            @elseif ($row->status == 'available')
-
-                            @else
-                                text-warning @endif
-                            ">
-                                {{ $row->name }}</h5>
-                            <p class="card-text">{{ $row->description }}</p>
-                            <p class="card-text">Rp. {{ $row->price }}</p>
-                            <p class="card-text">{{ $row->status }}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-
-
-                        </div>
-                    </div>
+      <div>
+        <h1>My Show Room</h1>
+        <p>List Show Room Nama - NIM</p>
+        <div class="d-flex gap-5">
+          @foreach ($showroom as $row)
+            <div class='card cardcontent' style='width: 18rem;'>
+            <img src='{{ url('storage/'.$row->image)}}' class='card-img-top' alt='fotomobil' style='padding: 16px;'>
+            <div class='card-body'>
+                <h5 class='card-title'>{{ $row->name }}</h5>
+                <p class='card-text'>{{ $row->description }}</p>
+                <span class='d-flex gap-2'>
+                  <a href='{{ '/detail/'.$row->id }}' class='btn btn-primary' style='border-radius: 100px; width:140px; height: 36px;'>Detail</a>
+                  {{-- delete car --}}
+                  <form action='{{ url('list/'.$row->id) }}' method='POST'>
+                    @csrf
+                    @method('DELETE')
+                    <button type='submit' class='btn btn-danger' style='border-radius: 100px; width:140px; height: 36px;'>Delete</button>
+                  </form>
+                </span>
             </div>
-</section>
+            </div>
+          @endforeach
+        </div>  
+      </div>
+    </div>
+  </section>
 <!-- Content End -->
+@endsection

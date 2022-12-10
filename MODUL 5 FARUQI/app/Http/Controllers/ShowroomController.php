@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Showrooms;
+use Illuminate\Support\Facades\Storage;
 
 class ShowroomController extends Controller
 {
     //
+
 
     /**
      * Add Car
@@ -18,31 +20,21 @@ class ShowroomController extends Controller
      */
     public function addCar(Request $request)
     {
-        $request->validate([
-            'id_user' => 'required|integer',
-            'name' => 'required|string',
-            'brand' => 'required|string',
-            'purchase_date' => 'required|date',
-            'description' => 'required|string',
-            'image' => 'required|image',
-            'status' => 'required|string',
+        $data = $request->all();
+        $img = Storage::disk('public')->put('img', $request->file('image'));
+
+        Showrooms::create([
+            'id_user' => $data['id_user'],
+            'name' => $data['name'],
+            'brand' => $data['brand'],
+            'purchase_date' => $data['purchase_date'],
+            'description' => $data['description'],
+            'image' => $img,
+            'status' => $data['status'],
         ]);
 
-        $showroom = new Showrooms([
-            'id_user' => $request->input('id_user'),
-            'name' => $request->input('name'),
-            'brand' => $request->input('brand'),
-            'purchase_date' => $request->input('purchase_date'),
-            'description' => $request->input('description'),
-            'image' => $request->input('image'),
-            'status' => $request->input('status'),
-        ]);
 
-        $showroom->save();
-
-        return response()->json([
-            'message' => 'Successfully added car!'
-        ], 201);
+        return redirect('/list')->with('success', 'Add Car Success');
     }
 
     /**
@@ -51,14 +43,10 @@ class ShowroomController extends Controller
      * @return response
      * 
      */
-    public function showCar()
+    public function showCar(Request $request)
     {
         $showroom = Showrooms::all();
-
-        return response()->json([
-            'message' => 'Successfully show car!',
-            'data' => $showroom
-        ], 200);
+        return view('list')->with('showroom', $showroom);
     }
 
     /**
@@ -68,15 +56,14 @@ class ShowroomController extends Controller
      * @return response
      * 
      */
-    public function carDetail($id)
+    public function carDetail(Request $request, $id)
     {
         $showroom = Showrooms::find($id);
+        // dd($car);
 
-        return response()->json([
-            'message' => 'Successfully show car detail!',
-            'data' => $showroom
-        ], 200);
+        return view('detail', compact('showroom'));
     }
+
 
     /**
      * Edit Car
@@ -88,31 +75,24 @@ class ShowroomController extends Controller
      */
     public function editCar(Request $request, $id)
     {
-        $request->validate([
-            'id_user' => 'required|integer',
-            'name' => 'required|string',
-            'brand' => 'required|string',
-            'purchase_date' => 'required|date',
-            'description' => 'required|string',
-            'image' => 'required|image',
-            'status' => 'required|string',
-        ]);
-
         $showroom = Showrooms::find($id);
+        $data = $request->all();
 
-        $showroom->id_user = $request->input('id_user');
-        $showroom->name = $request->input('name');
-        $showroom->brand = $request->input('brand');
-        $showroom->purchase_date = $request->input('purchase_date');
-        $showroom->description = $request->input('description');
-        $showroom->image = $request->input('image');
-        $showroom->status = $request->input('status');
+
+        $showroom->name = $data['name'];
+        $showroom->brand = $data['brand'];
+        $showroom->purchase_date = $data['purchase_date'];
+        $showroom->description = $data['description'];
+        if ($request->hasFile('image')) {
+            $img = Storage::disk('public')->put('img', $request->file('image'));
+            $showroom->image = $img;
+        }
+        $showroom->status = $data['status'];
+
 
         $showroom->save();
 
-        return response()->json([
-            'message' => 'Successfully edited car!'
-        ], 201);
+        return redirect('/list')->with('success', 'Edit Car Success');
     }
 
     /**
@@ -126,11 +106,11 @@ class ShowroomController extends Controller
     {
         $showroom = Showrooms::find($id);
 
+        // remove image from storage
+        Storage::disk('public')->delete($showroom->image);
+
         $showroom->delete();
 
-        return response()->json([
-            'message' => 'Successfully deleted car!'
-        ], 201);
+        return redirect()->back()->with('delete', 'Delete Car Success');
     }
-
 }

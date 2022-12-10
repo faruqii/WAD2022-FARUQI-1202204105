@@ -209,3 +209,37 @@ input {
 .required {
     color: red;
 }
+
+/* Profile Page */
+
+#profile label {
+    width: 20%;
+}
+
+#profile .profile input {
+    width: 950px;
+    height: 40px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+#profile h1 {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
+#profile .profile h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.profile button {
+    width: 139px;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+}

@@ -21,4 +21,10 @@ class Showrooms extends Model
         'status',
     ];
 
+    // showrooms has relationship with users one to many
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
+
 }
