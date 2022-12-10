@@ -19,8 +19,9 @@ class User extends Authenticatable
      */
 
     protected $table = 'users';
-    
+
     protected $fillable = [
+        'id',
         'name',
         'no_hp',
         'email',
@@ -41,5 +42,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Showrooms::class, 'id_user', 'id');
     }
-
 }

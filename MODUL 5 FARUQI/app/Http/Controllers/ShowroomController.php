@@ -29,13 +29,13 @@ class ShowroomController extends Controller
         ]);
 
         $showroom = new Showrooms([
-            'id_user' => $request->id_user,
-            'name' => $request->name,
-            'brand' => $request->brand,
-            'purchase_date' => $request->purchase_date,
-            'description' => $request->description,
-            'image' => $request->image,
-            'status' => $request->status,
+            'id_user' => $request->input('id_user'),
+            'name' => $request->input('name'),
+            'brand' => $request->input('brand'),
+            'purchase_date' => $request->input('purchase_date'),
+            'description' => $request->input('description'),
+            'image' => $request->input('image'),
+            'status' => $request->input('status'),
         ]);
 
         $showroom->save();
@@ -100,13 +100,13 @@ class ShowroomController extends Controller
 
         $showroom = Showrooms::find($id);
 
-        $showroom->id_user = $request->id_user;
-        $showroom->name = $request->name;
-        $showroom->brand = $request->brand;
-        $showroom->purchase_date = $request->purchase_date;
-        $showroom->description = $request->description;
-        $showroom->image = $request->image;
-        $showroom->status = $request->status;
+        $showroom->id_user = $request->input('id_user');
+        $showroom->name = $request->input('name');
+        $showroom->brand = $request->input('brand');
+        $showroom->purchase_date = $request->input('purchase_date');
+        $showroom->description = $request->input('description');
+        $showroom->image = $request->input('image');
+        $showroom->status = $request->input('status');
 
         $showroom->save();
 

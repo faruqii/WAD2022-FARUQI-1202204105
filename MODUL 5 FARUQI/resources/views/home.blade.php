@@ -1,5 +1,6 @@
-@include('layouts.layout')
+@extends('layouts.layout')
 
+@section('content')
 <!-- Jumbotron -->
 <section id="home">
     <div class="container">
@@ -21,3 +22,4 @@
     </div>
 </section>
 <!-- Jumbotron End -->
+@endsection

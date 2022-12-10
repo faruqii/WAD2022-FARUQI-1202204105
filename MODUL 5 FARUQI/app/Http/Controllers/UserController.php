@@ -24,12 +24,14 @@ class UserController extends Controller
             'password' => 'required|string|confirmed',
         ]);
 
-        User::create([
+        $user = new User([
             'name' => $request->input('name'),
             'no_hp' => $request->input('no_hp'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
         ]);
+
+        $user->save();
 
         return redirect()->view('login')->with('success', 'Register Success');
     }
@@ -48,18 +50,13 @@ class UserController extends Controller
             'remember_me' => 'boolean'
         ]);
 
-        $credentials = $request->only(['email', 'password']);
 
-        // check user in database
-        if (!auth()->attempt($credentials)) {
-            return response()->json([
-                'message' => 'Unauthorized'
-            ], 401);
-        }
+        // login user with email and password
+        $credentials = request(['email', 'password']);
+        if (!auth()->attempt($credentials))
+            return redirect()->route('login')->with('error', 'Login Failed');
 
-        $user = User::where('email', '=', $request->input('email'))->first();
-
-        return redirect()->view('home')->with('success', 'Login Success');
+        return redirect('home')->with('success', 'Login Success');
     }
 
     /**
@@ -89,9 +86,9 @@ class UserController extends Controller
 
         $user = User::where('email', '=', $request->input('email'))->first();
 
-        $user->name = $request->name;
-        $user->no_hp = $request->no_hp;
-        $user->password = bcrypt($request->password);
+        $user->name = $request->input('name');
+        $user->no_hp = $request->input('no_hp');
+        $user->password = bcrypt($request->input('password'));
 
         $user->save();
 
