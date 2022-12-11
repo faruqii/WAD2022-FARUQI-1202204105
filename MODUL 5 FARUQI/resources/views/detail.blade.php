@@ -30,7 +30,7 @@
                       <input type='radio' name='status' id='belum' value='Belum Lunas' {{ (($showroom->status == 'Belum Lunas') ? 'checked="checked"' : "")  }} style='width: 15px; height: 15px; margin-right:10px;'>
                       <label for='belum' style='margin-top: 15px;'>Belum Lunas</label>
                     </span>
-                    <button type="submit" class='btn btn-primary' style='margin-top: 40px;'>Edit</button>
+                    <button type="submit" class='btn btn-success' style='margin-top: 40px;'>Edit</button>
                   </form>
                 </div>
         @endauth

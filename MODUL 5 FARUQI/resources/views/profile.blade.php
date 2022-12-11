@@ -32,13 +32,13 @@
             <input type="password" id="password" name="password" placeholder="Konfirmasi Kata Sandi">
           </div>
           <div class="d-flex align-items-center mt-4 justify-content-center">
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-success">Update</button>
           </div>
         </div>
       </form>
         <div class="d-flex align-items-center gap-5 mt-5">
           <img src="../assets/img/logo-ead.png" alt="logoead" style="width:100px;">
-          <p style="margin-top: 20px; font-size:14px;">Faruwi Ganteng</p>
+          <p style="margin-top: 20px; font-size:14px;">Faruqi Ganteng</p>
         </div>
     </div>
 </section>

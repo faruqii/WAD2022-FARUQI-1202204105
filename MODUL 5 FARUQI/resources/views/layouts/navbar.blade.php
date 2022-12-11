@@ -1,5 +1,5 @@
   <!-- Nav -->
-  <nav class="navbar navbar-expand navbar-dark bg-primary">
+  <nav class="navbar navbar-expand navbar-dark bg-success">
     <div class="container py-2">
         {{-- check if user is logged in --}}
         @auth
