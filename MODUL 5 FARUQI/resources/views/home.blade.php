@@ -6,7 +6,7 @@
     <div class="container">
         <div class="d-flex gap-5 wrap justify-content-center align-items-center">
             <div>
-                <h1>Welcome To<br> Faruwi Show Room</h1>
+                <h1>Welcome To Faruqi<br>  Show Room</h1>
                 <p class="mt-3">Faruqi Show Room is a car showroom under EAD <br>Show Room Group</p>
                 <div class="d-flex  justify-content-lg-start mt-2">
 
