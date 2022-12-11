@@ -28,7 +28,7 @@
             </div>
         @else
             <div class="navbar-nav w-100 d-flex justify-content-between">
-                <a class="nav-link active" aria-current="page" href="{{ 'home' }}">Home</a>
+                <a class="nav-link active" aria-current="page" href="{{ '/' }}">Home</a>
                 <a class="nav-link" href="{{ 'login' }}">Login</a>
             </div>
         @endauth

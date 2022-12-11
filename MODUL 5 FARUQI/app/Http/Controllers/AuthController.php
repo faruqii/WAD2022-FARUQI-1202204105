@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Session;
 
 
-class UserController extends Controller
+class AuthController extends Controller
 {
     //
 

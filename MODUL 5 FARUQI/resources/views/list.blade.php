@@ -8,7 +8,7 @@
     <div class="container">
       <div>
         <h1>My Show Room</h1>
-        <p>List Show Room Nama - NIM</p>
+        <p>List of car in Faruqi Ganteng Banget Showroom</p>
         <div class="d-flex gap-5">
           @foreach ($showroom as $row)
             <div class='card cardcontent' style='width: 18rem;'>
