@@ -3,7 +3,15 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 min-vh-100 left">
-                    <img src="assets/img/hrv.png" style="object-fit:fill; width:100%; height:100%;" alt="foto">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <img src="assets/img/redbull.jpg" style="object-fit:fill; width:100%; height:100%;" alt="foto">
                 </div>
                 <div class="col-md-6">
                     <div class="form-login m-auto ps-5">

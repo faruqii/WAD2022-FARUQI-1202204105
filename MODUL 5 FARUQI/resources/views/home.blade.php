@@ -6,7 +6,7 @@
     <div class="container">
         <div class="d-flex gap-5 wrap justify-content-center align-items-center">
             <div>
-                <h1>Welcome To<br> Faruqi Show Room</h1>
+                <h1>Welcome To<br> Faruwi Show Room</h1>
                 <p class="mt-3">Faruqi Show Room is a car showroom under EAD <br>Show Room Group</p>
                 <div class="d-flex  justify-content-lg-start mt-2">
 
@@ -17,7 +17,7 @@
                 </div>
             </div>
             {{-- display image from assets/img --}}
-            <img src="assets/img/rubicon.png" alt="" style="width: 750px;height: 500px;">
+            <img src="assets/img/civic.png" alt="" style="width: 750px;height: 500px;">
         </div>
     </div>
 </section>
