@@ -73,7 +73,7 @@ class ShowroomController extends Controller
      * @return response
      * 
      */
-    public function editCar(Request $request)
+    public function editCar(Request $request, $id)
     {
         $showroom = Showrooms::find($id);
         $data = $request->all();
