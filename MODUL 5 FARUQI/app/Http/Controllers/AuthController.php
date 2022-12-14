@@ -52,7 +52,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return response
      */
-    public function loginuser(Request $request)
+    public function loginUser(Request $request)
     {
         $request->validate([
             'email' => 'required|string|email',
